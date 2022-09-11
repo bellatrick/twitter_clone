@@ -45,7 +45,6 @@ interface Props {
   commentPage?: boolean;
 }
 const Post = ({ id, post, postPage, commentPage }: Props) => {
-  console.log(post);
   const { data: session }: any = useSession();
   const [isOpen, setIsOpen] = useRecoilState(modalState);
   const [commentID, setCommentID] = useRecoilState(commentState);
@@ -279,7 +278,7 @@ const Post = ({ id, post, postPage, commentPage }: Props) => {
           <div
             className="flex items-center space-x-1 group"
             onClick={(e) => {
-              console.log(post, commentid, id);
+            
               e.stopPropagation();
               if (commentPage) {
                 setCommentID(commentid);
